@@ -14,4 +14,8 @@ public class Animal {
     public String sayAnimal() {
         return String.format("%s answers", getClass().getSimpleName());
     }
+
+    public String caressed() {
+        return String.format("%s eraser", getClass().getSimpleName());
+    }
 }

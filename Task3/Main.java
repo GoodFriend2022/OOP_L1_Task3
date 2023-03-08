@@ -5,9 +5,11 @@ package Task3;
 public class Main {
     public static void main(String[] args) {
         Human victor = new Human("Victor");
-        victor.pat(Species.dog);
-        
         Cat cat = new Cat();
+        Dog dog = new Dog();
+        victor.pat(Species.dog);
+        System.out.println(dog.caressed());
+        victor.call(Species.cat);
         System.out.println(cat.sayAnimal());
     }
 }
