@@ -1,22 +1,28 @@
 package Task3;
 
-public class Human {
-    private String name;
+public class Human extends Mammal implements Say, Kindness {
 
-    public String getName() {
-        return name;
+    public Human(String name) { 
+        super(name);
+        super.setModel("человек");
+    }
+    public Human() { 
+        super("noname");
+        super.setModel("человек");
     }
 
-    public Human(String name) { this.name = name; }
-    public Human() { this("unknown"); }
-
-    public void pat(Species sp) {
-        String name = this.name;
-        System.out.printf("%s pet the %s\n", name, sp);
+    @Override
+    public String kindness(Mammal ml) {
+        String nameAnimal = ml.getName();
+        String end = String.valueOf(nameAnimal.charAt(nameAnimal.length() - 1));
+        if (end.equalsIgnoreCase("a")) {
+            nameAnimal = nameAnimal.substring(0, nameAnimal.length() - 2) + "у";
+        } else nameAnimal += "а";
+        return String.format("%s ласкает %s\n", super.getName(), nameAnimal);
     }
-
-    public void call(Species sp) {
-        String name = this.name;
-        System.out.printf("%s calling the %s\n", name, sp);
+    
+    @Override
+    public String say(Mammal ml) {
+        return String.format("%s говорит %s хороший %s\n", super.getName(), ml.getName(), ml.getModel()); 
     }
 }

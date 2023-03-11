@@ -1,14 +1,21 @@
 package Task3;
 
-public class Cat extends Animal {
-    String answer = "meow";
-    String araser = "purr";
-
-    public String sayAnimal() {
-        return String.format("%s %s\n", super.sayAnimal(), this.answer);
+public class Cat extends Mammal implements Say, Kindness {
+    String answer = "мяу";
+    String araser = "мурлыкает";
+    
+    public Cat(String name) {
+        super(name);
+        super.setModel("котёнок");
     }
 
-    public String caressed() {
-        return String.format("%s and %s\n", super.caressed(), this.araser);
+    @Override
+    public String say(Mammal ml) {
+        return String.format("%s %s отвечает %s мой %s)\n", super.getModel(), super.getName(), this.answer, ml.getModel());   
+    }
+
+    @Override
+    public String kindness(Mammal ml) {
+        return String.format("%s %s %s\n", super.getModel(), super.getName(), this.araser);   
     }
 }

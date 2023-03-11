@@ -2,17 +2,24 @@ package Task3;
 
 import java.util.Random;
 
-public class Dog extends Animal {
-    String answer = "woof";
-    String eraser = "wagged his tail";
+public class Dog extends Mammal implements Say, Kindness {
+    String answer = "гав-гав";
+    String eraser = "веляет хвостиком";
     Random r = new Random();
-    int wave = r.nextInt(1, 10);
+    int wave = r.nextInt(60, 100);
 
-    public String sayAnimal() {
-        return String.format("%s %s\n", super.sayAnimal(), this.answer);
+    public Dog(String name) {
+        super(name);
+        super.setModel("собака");
     }
 
-    public String caressed() {
-        return String.format("%s and %s %d times\n", super.caressed(), this.eraser, this.wave);
+    @Override
+    public String say(Mammal ml) {
+        return String.format("%s %s говорит %s мой %s\n", super.getModel(), super.getName(), this.answer, ml.getModel());
+    }
+
+    @Override
+    public String kindness(Mammal ml) {
+        return String.format("%s %s %s %d раз в минуту)\n", super.getModel(), super.getName(), this.eraser, this.wave);
     }
 }

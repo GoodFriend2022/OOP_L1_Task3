@@ -4,12 +4,12 @@ package Task3;
 // Какое ещё взаимодействие может быть?
 public class Main {
     public static void main(String[] args) {
-        Human victor = new Human("Victor");
-        Cat cat = new Cat();
-        Dog dog = new Dog();
-        victor.pat(Species.dog);
-        System.out.println(dog.caressed());
-        victor.call(Species.cat);
-        System.out.println(cat.sayAnimal());
+        Human victor = new Human("Виктор");
+        Cat cat = new Cat("Мурка");
+        Dog dog = new Dog("Макс");
+        System.out.println(victor.say(cat));
+        System.out.println(cat.say(victor));
+        System.out.println(victor.kindness(dog));
+        System.out.println(dog.kindness(victor));
     }
 }
