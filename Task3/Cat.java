@@ -1,6 +1,6 @@
 package Task3;
 
-public class Cat extends Mammal implements Say, Kindness {
+public class Cat extends Animal implements Say, Kindness {
     String answer = "мяу";
     String araser = "мурлыкает";
     
@@ -10,12 +10,12 @@ public class Cat extends Mammal implements Say, Kindness {
     }
 
     @Override
-    public String say(Mammal ml) {
-        return String.format("%s %s отвечает %s мой %s)\n", super.getModel(), super.getName(), this.answer, ml.getModel());   
+    public String say() {
+        return String.format("%s %s отвечает %s мой Человек)\n", super.getModel(), super.getName(), this.answer);   
     }
 
     @Override
-    public String kindness(Mammal ml) {
+    public String kindness() {
         return String.format("%s %s %s\n", super.getModel(), super.getName(), this.araser);   
     }
 }

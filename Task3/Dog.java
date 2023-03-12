@@ -2,11 +2,11 @@ package Task3;
 
 import java.util.Random;
 
-public class Dog extends Mammal implements Say, Kindness {
+public class Dog extends Animal implements Say, Kindness {
     String answer = "гав-гав";
     String eraser = "веляет хвостиком";
-    Random r = new Random();
-    int wave = r.nextInt(60, 100);
+    Random amountWave = new Random();
+    int wave = amountWave.nextInt(60, 100);
 
     public Dog(String name) {
         super(name);
@@ -14,12 +14,12 @@ public class Dog extends Mammal implements Say, Kindness {
     }
 
     @Override
-    public String say(Mammal ml) {
-        return String.format("%s %s говорит %s мой %s\n", super.getModel(), super.getName(), this.answer, ml.getModel());
+    public String say() {
+        return String.format("%s %s говорит %s мой Человек\n", super.getModel(), super.getName(), this.answer);
     }
 
     @Override
-    public String kindness(Mammal ml) {
+    public String kindness() {
         return String.format("%s %s %s %d раз в минуту)\n", super.getModel(), super.getName(), this.eraser, this.wave);
     }
 }
