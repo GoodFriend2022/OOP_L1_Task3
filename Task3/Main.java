@@ -7,6 +7,7 @@ public class Main {
         Human victor = new Human("Виктор");
         Cat cat1 = new Cat("Мурка");
         Cat cat2 = new Cat("Барсик");
+        Cat cat3 = new Cat("Фроська");
         Dog dog1 = new Dog("Макс");
         Dog dog2 = new Dog("Буч");
         Dog dog3 = new Dog("Айя");
@@ -14,11 +15,13 @@ public class Main {
         FindModelAnimal modelAn = new FindModelAnimal();
         modelAn.getAnimals().add(cat1);
         modelAn.getAnimals().add(cat2);
+        modelAn.getAnimals().add(cat3);
         modelAn.getAnimals().add(dog1);
         modelAn.getAnimals().add(dog2);
         modelAn.getAnimals().add(dog3);
 
-        System.out.println(modelAn.findAnimal(dog1.getModel()));
+        victor.walk(modelAn.findAnimal(dog1.getModel()));
+        victor.feed(modelAn.getAnimals());
 
         System.out.println(victor.say());
         System.out.println(cat1.say());

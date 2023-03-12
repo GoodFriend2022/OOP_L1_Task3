@@ -1,6 +1,9 @@
 package Task3;
 
-public class Human implements Say, Kindness, Walk {
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Human implements Say, Kindness, Walk, Feed {
 
     String name;
     
@@ -26,6 +29,18 @@ public class Human implements Say, Kindness, Walk {
     public String say() {
         return String.format("%s зовет свего зверька\n", this.getName()); 
     }
+    @Override
+    public void walk(ArrayList<Animal> animals) {
+        String nameAnimals = "";
+        for (Animal an : animals) { nameAnimals += an.getName() + " "; }
+        System.out.printf("%s повел гулять зверьков по имени %s\n", this.getName(), nameAnimals);
+    }
+    @Override
+    public void feed(ArrayList<Animal> animals) {
+        Collections.sort(animals, new CompareHungerAnimal());
+        Collections.reverse(animals);
+        System.err.printf("%s покормил зверьков по имени %s\n", this.getName(), animals);
+    }
 
-    wal
+        
 }

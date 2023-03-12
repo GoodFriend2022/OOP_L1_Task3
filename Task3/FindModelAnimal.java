@@ -24,5 +24,4 @@ public class FindModelAnimal {
         return modelAnimals;
     }
     
-
 }
